@@ -60,9 +60,10 @@ brand metric, not just a logistics metric.
    enforcement or delist chronic offenders.
 2. **Protect top 124 sellers** — top 10% of sellers generate 67.11% of 
    GMV. These accounts need dedicated account management.
-3. **Build a repeat-purchase programme** — 4+ order customers spend 3.1× 
-   more than single buyers. Repeat rate is only 3%, indicating significant 
-   retention opportunity.
+3. **Build a repeat-purchase programme** — repeat rate is only 3%, but 
+   customers who return spend 3.1× more in lifetime value. Retention 
+   offers should target lower-ticket follow-up products — repeat buyers 
+   average BRL 80 per order vs BRL 130 for first-time buyers.
 4. **Pre-position logistics for November** — Black Friday caused a +52.37% 
    MoM revenue spike. Seasonal scaling should be planned ahead of Q4.
 
@@ -72,13 +73,13 @@ brand metric, not just a logistics metric.
 9 tables, 6 foreign key relationships, built in PostgreSQL.
 
 customers (99,441)
-└── orders (99,441)
-├── order_items (112,650)
-│     ├── products (32,951)
-│     │     └── product_category_translation (71)
-│     └── sellers (3,095)
-├── order_payments (103,886)
-└── order_reviews (99,224)
+orders (99,441)
+order_items (112,650)
+products (32,951)
+product_category_translation (71)
+sellers (3,095)
+order_payments (103,886)
+order_reviews (99,224)
 
 **Data quality issues found and handled:**
 - Products table CSV has a typo: `product_name_lenght` — schema matched 
